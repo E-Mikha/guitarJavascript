@@ -17,4 +17,40 @@ const CATALOG = [
         img: 'img/catalog/FENDER.jpg',
         price: 28800,
     },
+    {
+        id: 'el4',
+        name: 'EPIPHONE LP STANDARD 60S',
+        img: 'img/catalog/EPIPHONE.jpg',
+        price: 21600,
+    },
+    {
+        id: 'el5',
+        name: 'EPIPHONE SG STANDARD',
+        img: 'img/catalog/EPIPHONE SG.jpg',
+        price: 16200,
+    },
+    {
+        id: 'el6',
+        name: 'FENDER PLAYER SERIES STRATOCASTER PF ELECTRIC GUITAR',
+        img: 'img/catalog/FENDER.jpg',
+        price: 28800,
+    },
+    {
+        id: 'el7',
+        name: 'EPIPHONE LP STANDARD 60S',
+        img: 'img/catalog/EPIPHONE.jpg',
+        price: 21600,
+    },
+    {
+        id: 'el8',
+        name: 'EPIPHONE SG STANDARD',
+        img: 'img/catalog/EPIPHONE SG.jpg',
+        price: 16200,
+    },
+    {
+        id: 'el9',
+        name: 'FENDER PLAYER SERIES STRATOCASTER PF ELECTRIC GUITAR',
+        img: 'img/catalog/FENDER.jpg',
+        price: 28800,
+    },
 ];
