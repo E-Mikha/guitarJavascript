@@ -7,11 +7,12 @@ function render() {
 
 let CATALOG = []
 
-render()
+//server/catalog.json
 
-fetch('server/catalog.json')
+fetch('https://api.jsonserve.com/ZxY-WD')
     .then(res => res.json())
     .then(body => {
         CATALOG = body
+        render()
     })
-    .catch(error => console.log(error);)
+    .catch(error => console.log(error))
