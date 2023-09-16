@@ -7,9 +7,9 @@ function render() {
 
 let CATALOG = []
 
-//server/catalog.json
+// https://api.jsonserve.com/ZxY-WD
 
-fetch('https://api.jsonserve.com/ZxY-WD')
+fetch('server/catalog.json')
     .then(res => res.json())
     .then(body => {
         CATALOG = body
