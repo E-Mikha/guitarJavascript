@@ -1,39 +1,39 @@
 class Products {
-    constructor() {
-        this.classNameActive = 'products-element__btn_active'
-        this.labelAdd = 'Add to Cart'
-        this.labelRemove = 'Delete from Cart'
+  constructor() {
+    this.classNameActive = "products-element__btn_active";
+    this.labelAdd = "Add to Cart";
+    this.labelRemove = "Remove from Cart";
+  }
+
+  handleSetLocationStorage(element, id) {
+    const { pushProduct, products } = localStorageUtill.putProducts(id);
+
+    if (pushProduct) {
+      element.classList.add(this.classNameActive);
+      element.innerHTML = this.labelRemove;
+    } else {
+      element.classList.remove(this.classNameActive);
+      element.innerHTML = this.labelAdd;
     }
-    
-    handleSetLocationStorage(element, id) {
-        const { pushProduct, products } = localStorageUtill.putProducts(id)
-        
-        if (pushProduct) {
-            element.classList.add(this.classNameActive)
-            element.innerHTML = this.labelRemove
-        } else {
-            element.classList.remove(this.classNameActive)
-            element.innerHTML = this.labelAdd
-        }
 
-        headerPage.render(products.length)
-    }
-    
-    render () {
-        const productsStore = localStorageUtill.getProducts()
-        let htmlCatalog = '';
-        CATALOG.forEach(({id, name, price, img}) => {
-            let activeClass = ''
-            let activeText = ''
+    headerPage.render(products.length);
+  }
 
-            if (productsStore.indexOf(id) === -1) {
-                activeText = this.labelAdd
-            } else {
-                activeClass = ' '+this.classNameActive
-                activeText = this.labelRemove
-            }
+  render() {
+    const productsStore = localStorageUtill.getProducts();
+    let htmlCatalog = "";
+    CATALOG.forEach(({ id, name, price, img }) => {
+      let activeClass = "";
+      let activeText = "";
 
-            htmlCatalog += `
+      if (productsStore.indexOf(id) === -1) {
+        activeText = this.labelAdd;
+      } else {
+        activeClass = " " + this.classNameActive;
+        activeText = this.labelRemove;
+      }
+
+      htmlCatalog += `
             <li class="products-element">
                 <span class="products-element__name">${name}</span>
                 <img class="products-element__img" src="${img}"/>
@@ -45,16 +45,16 @@ class Products {
                 </button>
             </li>
             `;
-        });
+    });
 
-        const html = `
+    const html = `
         <ul class="products-container">
             ${htmlCatalog}
         </ul>
         `;
 
-        ROOT_PRODUCTS.innerHTML = html;
-    }
+    ROOT_PRODUCTS.innerHTML = html;
+  }
 }
 
 const productsPage = new Products();
